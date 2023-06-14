@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Smart Toggle</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="title_activity_location">LocationActivity</string>
+    <string name="title_activity_bottom_nav_content">BottomNavContentActivity</string>
+    <string name="title_activity_schedule_input">ScheduleInputActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
