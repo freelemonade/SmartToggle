@@ -18,9 +18,10 @@ class AndroidAlarmScheduler(private val context: Context): AlarmScheduler {
             putExtra("EXTRA_MESSAGE", item.message)
         }
 
-        alarmManager.setExactAndAllowWhileIdle(
+        alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,
             item.time.atZone(ZoneId.systemDefault()).toEpochSecond() * 1000,
+            AlarmManager.INTERVAL_DAY * 7,
             PendingIntent.getBroadcast(
                 context,
                 item.hashCode(),

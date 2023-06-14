@@ -18,6 +18,8 @@ class AlarmReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         val audioManager: AudioManager = context?.getSystemService(Context.AUDIO_SERVICE) as AudioManager
         val message = intent?.getStringExtra("EXTRA_MESSAGE") ?: return
+
+        println("here: ${message}")
         when(message) {
             "SILENT" -> audioManager.ringerMode = AudioManager.RINGER_MODE_SILENT
             "VIBRATE" -> audioManager.ringerMode = AudioManager.RINGER_MODE_VIBRATE
