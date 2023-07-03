@@ -1,4 +1,4 @@
-package com.example.smarttoggle.alarm
+package com.example.smarttoggle
 
 interface AlarmScheduler {
     fun schedule(item: AlarmItem, dayOfWeek: Int)

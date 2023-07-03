@@ -1,8 +1,8 @@
-package com.example.smarttoggle.alarm
+package com.example.smarttoggle
 
 import java.time.LocalDateTime
 
 data class AlarmItem(
     val time: LocalDateTime,
-    val message: String
+    val ringerType: String
 )

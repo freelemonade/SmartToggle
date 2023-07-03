@@ -1,12 +1,10 @@
-package com.example.smarttoggle.alarm
+package com.example.smarttoggle
 
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import java.time.DayOfWeek
 import java.time.ZoneId
-import java.util.Calendar
 
 class AndroidAlarmScheduler(private val context: Context): AlarmScheduler {
 
@@ -15,13 +13,12 @@ class AndroidAlarmScheduler(private val context: Context): AlarmScheduler {
     override fun schedule(item: AlarmItem, dayOfWeek: Int) {
 
         val intent = Intent(context, AlarmReceiver::class.java).apply {
-            putExtra("EXTRA_MESSAGE", item.message)
+            putExtra("EXTRA_RINGERTYPE", item.ringerType)
         }
 
-        alarmManager.setRepeating(
+        alarmManager.setExact(
             AlarmManager.RTC_WAKEUP,
             item.time.atZone(ZoneId.systemDefault()).toEpochSecond() * 1000,
-            AlarmManager.INTERVAL_DAY * 7,
             PendingIntent.getBroadcast(
                 context,
                 item.hashCode(),
